@@ -1,5 +1,4 @@
 function pow(num, degree) {
-  debugger;
   if (degree === 1) {
     return num;
   } else {
