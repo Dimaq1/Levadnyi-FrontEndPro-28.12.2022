@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  max-width: 204px;
+  height: max-content;
+}
+
+.button {
+  width: 100px;
+  height: 35px;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #ccc;
+  transition: 0.4s;
+  margin-bottom: 20px;
+}
+
+.button:hover {
+  background: #e5e4e4;
+}
+
+.text {
+  text-align: center;
+  background: #9d9d9d;
+  padding: 7px;
+  border: 2px solid black;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.active {
+  background: #b39b9b;
+}
