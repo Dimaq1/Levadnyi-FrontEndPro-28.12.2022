@@ -324,9 +324,6 @@ buyButton.addEventListener('click', () => {
   popUpBg.style.display = 'block'
   productDescription.style.display = 'none'
   listProducts.style.display = 'none'
-  setTimeout(function () {
-    defaultState()
-  }, 3000)
 })
 
 popUpBtn.addEventListener('click', () => {
