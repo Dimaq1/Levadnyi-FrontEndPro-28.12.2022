@@ -4,14 +4,11 @@ const button2 = document.querySelector('.btn2')
 
 
 let div = document.createElement('div')
-div.innerHTML = prompt('Text1:')
+div.innerHTML = prompt('Text:')
 div.className = 'text'
 
 button1.addEventListener('click', function () {
   wrap.appendChild(div)
-  wrap.appendChild(div2)
-  wrap.appendChild(div3)
-
 })
 
 button2.addEventListener('click', function () {
