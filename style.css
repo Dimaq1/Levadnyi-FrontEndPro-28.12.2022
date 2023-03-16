@@ -1,0 +1,141 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.wrapp {
+  padding: 100px 30px;
+  background: #e3e3e3;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  max-width: 200px;
+}
+
+.category {
+  font-size: 20px;
+  list-style: none;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 7px;
+  transition: 0.3s;
+}
+
+.category:hover {
+  background: #c5c5c5;
+}
+
+.category:active {
+  background: #acacac;
+}
+
+.list-products {}
+
+.list-item {
+  list-style: none;
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  height: max-content;
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+.active {
+  display: block;
+}
+
+.list-item:hover {
+  background: #c5c5c5;
+}
+
+.product-description {
+  display: none;
+  border: 2px solid black;
+  height: max-content;
+  padding: 10px;
+  border-radius: 7px;
+}
+
+.product-price {
+  margin-bottom: 20px;
+}
+
+.product-text {
+  margin-bottom: 20px;
+}
+
+.buy-button {
+  font-size: 18px;
+  background: rgb(115, 115, 115);
+  color: white;
+  width: 100px;
+  padding: 5px;
+  border-radius: 7px;
+  border-color: transparent;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btn-pop-up:hover,
+.buy-button:hover {
+  background: rgb(197, 197, 197);
+  color: rgb(115, 115, 115);
+}
+
+.pop-up {
+  display: none;
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  background-color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 40px;
+  z-index: 3;
+  border-radius: 7px;
+}
+
+.pop-up-bg {
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: black;
+  opacity: 0.4;
+  display: none;
+}
+
+.btn-pop-up {
+  font-size: 18px;
+  background: rgb(115, 115, 115);
+  color: white;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  border-color: transparent;
+  cursor: pointer;
+  transition: 0.4s;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
