@@ -96,7 +96,7 @@ body {
   transition: 0.4s;
 }
 
-.btn-pop-up:hover,
+
 .buy-button:hover {
   background: rgb(197, 197, 197);
   color: rgb(115, 115, 115);
@@ -112,7 +112,7 @@ body {
   transform: translateX(-50%);
   text-align: center;
   padding: 20px;
-  z-index: 3;
+  z-index: 1;
   border-radius: 7px;
 }
 
@@ -124,7 +124,103 @@ body {
   display: none;
 }
 
-.form-registration {
+.btn-pop-up {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background: #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-pop-up:hover {
+  background: rgb(197, 197, 197);
+}
+
+.form {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+}
+
+.form-title {
+  margin-bottom: 10px;
+}
+
+.btn {
+  width: 150px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+#form-btn-submit {
+  margin-bottom: -13px;
+}
+
+label>span {
+  display: block;
+}
+
+.pop-up-error {
+  display: none;
+  width: 500px;
+  height: 300px;
+  padding: 40px 0;
+  background: white;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.pop-up-error-btn {
+  width: 50px;
+  height: 30px;
+  background: #909090;
+  border: none;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.accept {
+  display: none;
+  background: white;
+  z-index: 2;
+  padding: 10px;
+  border-radius: 10px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 20px;
+}
+
+.btn-accept {
+  width: 60px;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  background-color: #ccc;
+  cursor: pointer;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.info {
+  margin-bottom: 15px;
 }

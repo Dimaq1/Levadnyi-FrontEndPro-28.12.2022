@@ -34,36 +34,77 @@
 
 
     <div class="pop-up">
-      <form class="form-registration" action="#">
+      <button class="btn-pop-up">&#10006;</button>
+      <h2 class="form-title">Оформлення замовлення</h2>
+      <form class="form" id="order-form" action="#">
 
-        <label for="name">Ім'я</label>
-        <input type="text" id="name" placeholder="Ім'я">
+        <label for="name">
+          <span>Ім'я</span>
+          <input type="text" id="name" placeholder="Ім'я">
+        </label>
 
-        <label for="lastname">Прізвище</label>
-        <input type="text" id="surname" placeholder="Прізвище">
+        <label for="lastname">
+          <span>Прізвище</span>
+          <input type="text" id="lastname" placeholder="Прізвище">
+        </label>
 
-        <label for="">По-батькові</label>
-        <input type="text" id="surname" placeholder="По-батькові">
+        <label for="surname">
+          <span>По-батькові</span>
+          <input type="text" id="surname" placeholder="По-батькові">
+        </label>
 
-        <label for="city">Місто</label>
+        <label for="city"></label>
+        <span>Місто</span>
         <select name="city" id="city">
-          <option value="city">Kyiv</option>
-          <option value="city">Dnipro</option>
-          <option value="city">Lviv</option>
+          <option>Київ</option>
+          <option>Дніпро</option>
+          <option>Львів</option>
         </select>
 
 
-        <label for="post">Відділення пошти</label>
-        <select name="post" id="post">
-          <option value="post">№80</option>
-          <option value="post">№90</option>
-          <option value="post">№100</option>
-        </select>
+        <label for="post">
+          <span>Відділення пошти</span>
+          <select name="post" id="post">
+            <option value="№82">№82</option>
+            <option value="№91">№91</option>
+            <option value="№154">№154</option>
+          </select>
+        </label>
+
+        <label for="payment">
+          <span>Спосіб оплати</span>
+          <select name="payment" id="payment">
+            <option>Післяплата</option>
+            <option>Банківська карта</option>
+          </select>
+        </label>
+
+
+        <label for="amount">
+          <span>Кількість товару</span>
+          <input type="number" id="amount" placeholder="Кількість" min="1" value="1">
+        </label>
+
+        <label for="comment">
+          <span>Коментар</span>
+          <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Ваш коментар"></textarea>
+        </label>
+
+        <button id="form-btn-submit" class="btn" type="submit">Купити</button>
+        <button id="form-btn-reset" class="btn" type="reset">Видалити</button>
 
       </form>
     </div>
 
+    <div class="pop-up-error">
+      <div>Помилка, непрвильно введені поля</div>
+      <button class="pop-up-error-btn">OK</button>
+    </div>
+
     <div class="pop-up-bg"></div>
+    <div class="accept">
+      <button class="btn-accept">OK</button>
+    </div>
   </div>
 
 

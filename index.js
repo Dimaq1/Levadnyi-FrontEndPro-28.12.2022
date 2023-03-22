@@ -261,6 +261,7 @@ const products = {
   ],
 }
 
+const wrapp = document.querySelector('.wrapp')
 const categories = document.querySelector('.categories')
 const listProducts = document.querySelector('.list-products')
 const productDescription = document.querySelector('.product-description')
@@ -269,7 +270,11 @@ const productText = document.querySelector('.product-text')
 const buyButton = document.querySelector('.buy-button')
 const popUp = document.querySelector('.pop-up')
 const popUpBg = document.querySelector('.pop-up-bg')
-const popUpBtn = document.querySelector('.btn-pop-up')
+const btnPopUp = document.querySelector('.btn-pop-up')
+const popUpError = document.querySelector('.pop-up-error')
+const btnPopUpError = document.querySelector('.pop-up-error-btn')
+const accept = document.querySelector('.accept')
+const btnAccept = document.querySelector('.btn-accept')
 
 
 categories.addEventListener('click', (e) => {
@@ -326,9 +331,144 @@ buyButton.addEventListener('click', () => {
   listProducts.style.display = 'none'
 })
 
-popUpBtn.addEventListener('click', () => {
+btnPopUp.addEventListener('click', () => {
   defaultState()
 })
+
+const form = document.querySelector('#order-form')
+const formName = form.name
+const formLastname = form.lastname
+const formSurname = form.surname
+const formCity = document.querySelector('#city')
+const formPost = form.post
+const formPayment = form.payment
+const formAmount = form.amount
+const formComment = form.comment
+const formBtnSubmit = document.querySelector('#form-btn-submit')
+
+function validateLongLength(value, length) {
+  return value.length >= length
+}
+
+function validateForValue(value) {
+  return !!value.trim()
+}
+
+function notNumber(value) {
+  return value ? isNaN(value) : false
+}
+
+const inputs = [
+  {
+    name: 'name',
+    inputEl: formName,
+    minLengthValue: 2,
+    validateRules: [validateLongLength, notNumber, validateForValue],
+    isValid: false,
+    needValid: true,
+  },
+  {
+    name: 'lastname',
+    inputEl: formLastname,
+    minLengthValue: 3,
+    validateRules: [validateLongLength, notNumber, validateForValue],
+    isValid: false,
+    needValid: true,
+  },
+  {
+    name: 'surname',
+    inputEl: formSurname,
+    minLengthValue: 4,
+    validateRules: [validateLongLength, notNumber, validateForValue],
+    isValid: false,
+    needValid: true,
+  },
+  {
+    name: 'city',
+    inputEl: formCity,
+    minLengthValue: null,
+    validateRules: [],
+    isValid: false,
+    needValid: false,
+  },
+  {
+    name: 'post',
+    inputEl: formPost,
+    minLengthValue: null,
+    validateRules: [],
+    isValid: false,
+    needValid: false,
+  },
+  {
+    name: 'payment',
+    inputEl: formPayment,
+    minLengthValue: null,
+    validateRules: [],
+    isValid: false,
+    needValid: false,
+  },
+  {
+    name: 'amount',
+    inputEl: formAmount,
+    minLengthValue: null,
+    validateRules: [],
+    isValid: false,
+    needValid: false,
+  },
+  {
+    name: 'comment',
+    inputEl: formComment,
+    minLengthValue: null,
+    validateRules: [],
+    isValid: false,
+    needValid: false,
+  },
+]
+
+formBtnSubmit.addEventListener('click', (e) => {
+  e.preventDefault()
+
+  console.dir(formCity.value);
+
+  const validatedArr = inputs.map((el) => {
+
+    const isAllValid = el.validateRules.map((func) => {
+      return func(el.inputEl.value, el.minLengthValue)
+    })
+    return el.isValid = isAllValid.every(el => el === true)
+
+  })
+  if (validatedArr.every(el => el === true)) {
+    const data = {}
+    inputs.forEach((input) => {
+      data[input.name] = input.inputEl.value
+    })
+    sendData(data)
+  } else {
+    popUpError.style.display = 'block'
+    popUp.style.zIndex = '0'
+  }
+})
+
+function sendData(data) {
+  const div = document.createElement('div')
+  div.innerHTML = `Замовлення на ім'я: ${data.lastname + ' ' + data.name + ' ' + data.surname} <br> Кількість товару: ${data.amount}<br>Доставка: м.${data.city}, відділення ${data.post}<br>Спосіб оплати: ${data.payment}\n `
+  div.className = 'info'
+  accept.prepend(div)
+  accept.style.display = 'block'
+  popUp.style.display = 'none'
+  btnAccept.addEventListener('click', () => {
+    defaultState()
+    div.innerHTML = ''
+    accept.style.display = 'none'
+  })
+}
+
+btnPopUpError.addEventListener('click', () => {
+  popUp.style.zIndex = '1'
+  popUpError.style.display = 'none'
+})
+
 
 
 
