@@ -276,7 +276,6 @@ const btnPopUpError = document.querySelector('.pop-up-error-btn')
 const accept = document.querySelector('.accept')
 const btnAccept = document.querySelector('.btn-accept')
 
-
 categories.addEventListener('click', (e) => {
   const target = e.target
   if (target === e.currentTarget) return
