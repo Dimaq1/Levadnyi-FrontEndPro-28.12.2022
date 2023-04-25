@@ -1,0 +1,5 @@
+.App {
+  display: flex;
+  font-size: 25px;
+  gap: 30px;
+}
