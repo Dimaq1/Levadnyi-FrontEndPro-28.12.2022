@@ -1,0 +1,9 @@
+.todo-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #ccc;
+  width: max-content;
+  margin: 0 auto;
+  padding: 15px;
+}
