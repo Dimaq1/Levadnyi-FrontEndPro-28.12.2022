@@ -31,11 +31,11 @@ const Weather = () => {
           <p>Deg: {weather.wind.deg}°</p>
           <img
             src={`http://openweathermap.org/img/w/10d.png`}
-            alt="Weather Icon"
+            alt="icon"
           />
         </div>
       ) : (
-        <p>Loading weather...</p>
+        <p>Loading...</p>
       )}
     </div>
   )
